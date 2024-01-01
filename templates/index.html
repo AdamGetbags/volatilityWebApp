@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Volatility Web App {% endblock %}</h1>
+    <table border="4">
+        <tr>
+            <th>Company Logo</th>
+            <th>Index</th>
+            <th>Ticker</th>
+            <th>Standard Deviation</th>
+        </tr>
+        {% for volatility_data in volatility_data.itertuples() %}
+            <tr>
+                <td><img src="{{ volatility_data['image_url'] }}" height="64" width="64"></td> 
+                <td>{{ volatility_data['id'] }}</td>
+                <td>{{ volatility_data['ticker'] }}</td>
+                <td>{{ volatility_data['std_dev'] }}</td>
+            </tr>
+        {% endfor %} 
+    </table>
+{% endblock %}
