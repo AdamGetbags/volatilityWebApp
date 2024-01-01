@@ -1,0 +1,1 @@
+polygonAPI = 'acbdefghhijklmnopqrstuvwxyz'
